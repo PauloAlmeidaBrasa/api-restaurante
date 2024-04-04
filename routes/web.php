@@ -14,15 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    var_dump('dfnfjasf');
-    die();
     return view('welcome');
 });
-Route::get('/users', function () {
-    var_dump('dfnfjasf');
-    die();
-    return view('welcome');
-});
-Route::get('/example', function () {
-    return response()->json(['message' => 'Hello from API!']);
-});
+// Route::get('/users', function () {
+//     var_dump('QQQQQQQQQQ');
+//     die();
+//     return view('welcome');
+// });
