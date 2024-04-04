@@ -29,3 +29,11 @@ Route::get('/cardapios', function () {
   die();
   //return User::all();
 });
+Route::get('/', function () {
+
+
+
+  var_dump('dfnfjasf');
+  die();
+  //return User::all();
+});
