@@ -9,31 +9,31 @@ class CardapioController extends Controller
     public function __construct()
     { }
     public function getCardapios(Request $request) {
-        $params = $request->all();
-        $validateData = $this->validParameters($request);
-        if (!$validateData['success']) {
-            // Return error response if validation fails
-            return response()->json(['message' => $validateData['message']], 500);
+
+
+        $limit = $request->input('limit');
+        $offset = $request->input('offset');
+        if (!isset($limit)) { 
+            return response()->json(['message' => 'Parameter limit is missing'], 500); 
+        }
+        if (!isset($offset)) { 
+            return response()->json(['message' => 'Parameter offset is missing'], 500); 
         }
 
         $menus = ["cardapio1"];
 
-        // Return the list of menus as JSON response
         return response()->json($menus);
     }
-
-    private function validParameters(Request $request)
+    
+    private function validParameters($params)
     {
-        // Check if 'offset' and 'limit' parameters are present in the request
-        if (!$request->has('offset')) {
-            return ['success' => false, 'message' => 'Parameter "offset" is missing'];
+        if (!isset($params['offset'])) {
+            return ['success' => false, 'message' => $params];
+        }
+        if (!isset($params['limit'])) {
+            return ['success' => false, 'message' => 'Parameter limit is missing'];
         }
 
-        if (!$request->has('limit')) {
-            return ['success' => false, 'message' => 'Parameter "limit" is missing'];
-        }
-
-        // If both parameters are present, return success
         return ['success' => true];
     }
 }
