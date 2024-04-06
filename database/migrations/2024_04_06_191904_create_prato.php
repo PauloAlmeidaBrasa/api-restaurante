@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('nome',255);
             $table->decimal('preco', 8, 2);
+            $table->text('descricao',255);
             $table->unsignedBigInteger('cardapio_id');
             $table->foreign('cardapio_id')->references('id')->on('cardapio');
             $table->timestamps();
