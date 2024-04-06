@@ -10,7 +10,6 @@ class CardapioController extends Controller
     { }
     public function getCardapios(Request $request) {
 
-
         $limit = $request->input('limit');
         $offset = $request->input('offset');
         if (!isset($limit)) { 
@@ -23,17 +22,5 @@ class CardapioController extends Controller
         $menus = ["cardapio1"];
 
         return response()->json($menus);
-    }
-    
-    private function validParameters($params)
-    {
-        if (!isset($params['offset'])) {
-            return ['success' => false, 'message' => $params];
-        }
-        if (!isset($params['limit'])) {
-            return ['success' => false, 'message' => 'Parameter limit is missing'];
-        }
-
-        return ['success' => true];
     }
 }
