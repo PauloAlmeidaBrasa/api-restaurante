@@ -6,6 +6,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\PratoTableSeeder;
 use Database\Seeders\CardapioTableSeeder;
+use App\Models\Cardapio;
+use App\Models\Prato;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,8 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CardapioTableSeeder::class);
-        $this->call(PratoTableSeeder::class);
+        //$this->call(CardapioTableSeeder::class);
+        //$this->call(PratoTableSeeder::class);
+        Cardapio::factory(50)->create();
+        Prato::factory(50)->create();
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
