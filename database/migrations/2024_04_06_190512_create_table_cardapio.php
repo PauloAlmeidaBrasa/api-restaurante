@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('cardapio', function (Blueprint $table) {
             $table->id();
             $table->text('nome',255);
+            $table->text('descricao',255);
             $table->timestamps();
         });
     }

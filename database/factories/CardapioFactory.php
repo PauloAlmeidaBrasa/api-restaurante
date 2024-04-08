@@ -19,6 +19,7 @@ class CardapioFactory extends Factory
     {
         return [
             'nome' => fake()->name(),
+            'descricao' => fake()->text()
         ];
     }
 

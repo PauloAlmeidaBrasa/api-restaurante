@@ -26,6 +26,7 @@ Route::get('/users', function () {
   //response()->json(['message' => 'Hello from API!']);
 });
 Route::get('/cardapios',[CardapioController::class, 'getCardapios']);
+Route::get('/cardapio',[CardapioController::class, 'getCardapio']);
 // Route::get('/cardapios', function () {
 
 

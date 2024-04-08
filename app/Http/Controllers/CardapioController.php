@@ -23,4 +23,15 @@ class CardapioController extends Controller
         $menus = Cardapio::All();
         return response()->json($menus);
     }
+    public function getCardapio(Request $request) {
+
+        $id = $request->input('idCardapio');
+
+        if (!isset($id)) { 
+            return response()->json(['message' => 'Parameter id cardapio is missing'], 500); 
+        }
+
+        $menu = Cardapio::findOrFail($id);
+        return response()->json($menu);
+    }
 }
