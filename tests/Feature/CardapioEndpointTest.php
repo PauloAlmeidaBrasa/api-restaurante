@@ -24,6 +24,30 @@ class CardapioEndpointTest extends TestCase
 
 
     }
+    public function testMissingParameterCardapio()
+    {
+       // $this->withoutExceptionHandling();
+
+        //$response = $this->json('GET', '/api/cardapio');
+        //dd($response->getContent());
+        $response = $this->Json('GET','/api/cardapio');
+
+        $response->assertStatus(500);
+
+
+    }    
+    public function testSuccessCardapio()
+    {
+       // $this->withoutExceptionHandling();
+
+        //$response = $this->json('GET', '/api/cardapio');
+        //dd($response->getContent());
+        $response = $this->Json('GET','/api/cardapio',['id' => 1]);
+
+        $response->assertStatus(200);
+
+
+    }
 }
 // it('',function() {
 //     getJson('/cardapios')->assertStatus(200);

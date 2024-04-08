@@ -25,7 +25,8 @@ class CardapioController extends Controller
     }
     public function getCardapio(Request $request) {
 
-        $id = $request->input('idCardapio');
+        $id = $request->input('id');
+        //dd($request->input());
 
         if (!isset($id)) { 
             return response()->json(['message' => 'Parameter id cardapio is missing'], 500); 
