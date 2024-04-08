@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('acompanhamento', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('nome');
             $table->decimal('preco', 8, 2);
             $table->timestamps();
         });

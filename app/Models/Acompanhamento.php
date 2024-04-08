@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Acompanhamento extends Model
 {
+
+    protected $table = 'acompanhamento';
+
     use HasFactory;
 
     protected $fillable = [

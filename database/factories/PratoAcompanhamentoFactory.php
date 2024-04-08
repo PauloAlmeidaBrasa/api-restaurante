@@ -14,6 +14,14 @@ class PratoAcompanhamentoFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+         /**
+     * The name of the database table to seed.
+     *
+     * @var string
+     */
+    protected $table = 'prato_acompanhamento';
+
     public function definition()
     {
         return [

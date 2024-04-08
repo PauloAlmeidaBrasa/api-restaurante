@@ -20,18 +20,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(CardapioTableSeeder::class);
-        //$this->call(PratoTableSeeder::class);
         Cardapio::factory(3)->create();
         Prato::factory(15)->create();
-        Acompanhamento::factory(45);
-        PratoAcompanhamento::factory(2);
-        // \App\Models\User::factory(10)->create();file:///home/paulor/Projetos/restaurante-orchestration/docker-compose.yaml
-            
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        Acompanhamento::factory(45)->create();
+        PratoAcompanhamento::factory(2)->create();
+  
     }
 }
