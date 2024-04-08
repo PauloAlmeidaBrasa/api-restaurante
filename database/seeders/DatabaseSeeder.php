@@ -10,6 +10,7 @@ use App\Models\Cardapio;
 use App\Models\Prato;
 use App\Models\Acompanhamento;
 use App\Models\PratoAcompanhamento;
+use App\Models\Subacompanhamento;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,6 @@ class DatabaseSeeder extends Seeder
         Prato::factory(15)->create();
         Acompanhamento::factory(45)->create();
         PratoAcompanhamento::factory(2)->create();
-  
+        Subacompanhamento::factory(15)->create();  
     }
 }

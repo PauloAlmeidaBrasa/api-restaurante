@@ -15,13 +15,13 @@ class CardapioTableSeeder extends Seeder
      */
     public function run()
     {
-        $prato = new Cardapio();
+        //sss$prato = new Cardapio();
 
-        $prato->nome = 'Nome do Cardapio 1';
+        //$prato->nome = 'Nome do Cardapio 1';
 /*         $prato->descricao = 'Descrição do Cardapio';
         $prato->preco = 10.99;
         $prato->cardapio_id = 1; */
-        $prato->save();
+        ///$prato->save();
 
         //
     }

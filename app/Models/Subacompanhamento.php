@@ -5,11 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AcompanhamentoPrato extends Model
+class Subacompanhamento extends Model
 {
     use HasFactory;
+    protected $table = 'subacompanhamento';
 
     protected $fillable = [
-        'nome', 'preco'
+        'nome', 'descricao', 'preco'
     ];
 }
