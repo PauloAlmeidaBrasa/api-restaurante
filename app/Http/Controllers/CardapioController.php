@@ -20,11 +20,11 @@ class CardapioController extends Controller
             return response()->json(['message' => 'Parameter offset is missing'], 500); 
         }
 
-        $menus = Cardapio::find(1);   
+        $menus = Cardapio::All();   
     /*     DB::enableQueryLog();
 
         dd(DB::getQueryLog()); */
 
-        return response()->json('$menus');
+        return response()->json($menus);
     }
 }
