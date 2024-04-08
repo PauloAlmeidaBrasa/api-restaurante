@@ -15,13 +15,13 @@ class PratoTableSeeder extends Seeder
      */
     public function run()
     {
-        $prato = new Prato();
+        /* $prato = new Prato();
 
         $prato->nome = 'Nome do Cardapio';
         $prato->descricao = 'Descrição do Cardapio';
         $prato->preco = 10.99;
         $prato->cardapio_id = 1;
-        $prato->save();
+        $prato->save(); */
 
 /*         $prato->save([
             'nome' => 'Nome do Prato',

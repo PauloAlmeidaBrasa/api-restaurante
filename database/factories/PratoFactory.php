@@ -17,11 +17,12 @@ class PratoFactory extends Factory
      */
     public function definition()
     {
+        static $number = 1;
         return [
-            'nome' => fake()->name(),
+            'nome' => 'Prato '.$number ++,
             'descricao' => fake()->text(),
             'preco' => 10.99,
-            'cardapio_id' => 2
+            'cardapio_id' => fake()->numberBetween(1, 3)
         ];
     }
 
