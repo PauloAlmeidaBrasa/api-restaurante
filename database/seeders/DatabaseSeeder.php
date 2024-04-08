@@ -8,6 +8,8 @@ use Database\Seeders\PratoTableSeeder;
 use Database\Seeders\CardapioTableSeeder;
 use App\Models\Cardapio;
 use App\Models\Prato;
+use App\Models\Acompanhamento;
+use App\Models\PratoAcompanhamento;
 
 class DatabaseSeeder extends Seeder
 {
@@ -22,6 +24,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(PratoTableSeeder::class);
         Cardapio::factory(3)->create();
         Prato::factory(15)->create();
+        Acompanhamento::factory(45);
+        PratoAcompanhamento::factory(2);
         // \App\Models\User::factory(10)->create();file:///home/paulor/Projetos/restaurante-orchestration/docker-compose.yaml
             
 
