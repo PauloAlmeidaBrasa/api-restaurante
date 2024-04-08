@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Cardapio;
 
 class CardapioController extends Controller
 {
@@ -19,8 +20,11 @@ class CardapioController extends Controller
             return response()->json(['message' => 'Parameter offset is missing'], 500); 
         }
 
-        $menus = ["cardapio1"];
+        $menus = Cardapio::find(1);   
+    /*     DB::enableQueryLog();
 
-        return response()->json($menus);
+        dd(DB::getQueryLog()); */
+
+        return response()->json('$menus');
     }
 }

@@ -22,7 +22,8 @@ class DatabaseSeeder extends Seeder
         //$this->call(PratoTableSeeder::class);
         Cardapio::factory(50)->create();
         Prato::factory(50)->create();
-        // \App\Models\User::factory(10)->create();
+        // \App\Models\User::factory(10)->create();file:///home/paulor/Projetos/restaurante-orchestration/docker-compose.yaml
+            
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
