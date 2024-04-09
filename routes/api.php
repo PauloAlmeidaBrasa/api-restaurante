@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CardapioController;
+use App\Http\Controllers\PratoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::get('/users', function () {
 });
 Route::get('/cardapios',[CardapioController::class, 'getCardapios']);
 Route::get('/cardapio',[CardapioController::class, 'getCardapio']);
+Route::get('/pratos',[PratoController::class, 'getPratos']);
 // Route::get('/cardapios', function () {
 
 
