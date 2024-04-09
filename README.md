@@ -1,11 +1,31 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🚀 Começando 
+#### toda as dependencias desse serviço sao geradas no container,portanto não precisa de dependencias externas para rodar esse serviço, só precisa garantir que as portas 3306 e 8000 estejam livres para a aplicação
+#### Obs: Quando for rodar as migration será necessario mudar o valor da variavel de ambiente "DB_HOST" no .env, mude o valor de "restaurante-db-migrations" para "127.0.0.1" assim as migrations funcionarão, após rodar as migrations e seeds necessárias, volte o valor de "DB_HOST" para "restaurante-db-migrations" para que a aplicação funcione corretamente. Infelizmente isso esta sendo necessário por enquanto.
+<ol> <li> <b>Startando api-restaurante =></b>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+ -   Após clonar o repositorio rodar <b>compose install</b>, caso tenha problema nesse comando, experimente utilizar a tag <b>--ignore-platform-reqs</b> no comando.
+
+ -   mudar o arquivo <b>.env.example</b> para <b>.env</b> apenas,
+
+ -  Rodar <b>php artisan key:generate</b> para gerar a key aplicação
+
+ -  Rodar migrations, <b>php artisan migrate</b> para criar o banco e as tabelas
+
+ -  Rodar migrations, <b>php artisan migrate:refresh --seed</b> para recriar o banco junto com as seeds
+</li> </ol>
+<ol> <li> <b>Rodando testes =></b>
+
+ -   Para rodar os testes rode <b>php artisan test</b>, e garanta que os testes de integração estão rodando
+</li> </ol>
+
+## Tecnologias usadas
+
+- API REST feita em Laravel => [[Simple, fast routing engine](https://laravel.com/docs/routing).](https://laravel.com/)
+- Composer como gerenciador de pacotes => [Composer](https://getcomposer.org/).
+- Mysl como DB  [Db]((https://hub.docker.com/_/mysql)).
+
+
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
 ## About Laravel
 
@@ -21,45 +41,6 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
