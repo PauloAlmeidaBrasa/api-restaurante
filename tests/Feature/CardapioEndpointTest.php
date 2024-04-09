@@ -13,42 +13,56 @@ class CardapioEndpointTest extends TestCase
      *
      * @return void
      */
-    public function testMissingParameters()
+    public function testMissingLimitParameter()
     {
        // $this->withoutExceptionHandling();
+       $params = [
+        'offset' => 1
+        // 'limit' => 
+       ];
 
-        $response = $this->json('GET', '/api/cardapios');
-        //dd($response->getContent());
+        $response = $this->json('GET', '/api/cardapios',$params);
 
-        $response->assertStatus(500);
+        $response->assertStatus(500)
+             ->assertJson([
+                 'message' => 'Parameter limit is missing'
+             ]);
 
 
     }
-    public function testMissingParameterCardapio()
+    public function testMissingOffsetParameter()
     {
-       // $this->withoutExceptionHandling();
 
-        //$response = $this->json('GET', '/api/cardapio');
-        //dd($response->getContent());
-        $response = $this->Json('GET','/api/cardapio');
+       $params = [
+        'limit' => 50
+        // 'offser' => 
+       ];
 
-        $response->assertStatus(500);
+        $response = $this->json('GET', '/api/cardapios',$params);
 
+        $response->assertStatus(500)
+             ->assertJson([
+                 'message' => 'Parameter offset is missing'
+             ]);
+
+    }
+    public function testSuccessCardapios()
+    {
+        //$this->withoutExceptionHandling();
+        $params = [
+            'limit' => 50,
+            'offset' =>  0
+        ];
+    
+        $response = $this->json('GET', '/api/cardapios',$params);
+
+        $response->assertStatus(200);
 
     }    
     public function testSuccessCardapio()
     {
-       // $this->withoutExceptionHandling();
-
-        //$response = $this->json('GET', '/api/cardapio');
-        //dd($response->getContent());
         $response = $this->Json('GET','/api/cardapio',['id' => 1]);
 
         $response->assertStatus(200);
-
-
     }
 }
-// it('',function() {
-//     getJson('/cardapios')->assertStatus(200);
-// });
