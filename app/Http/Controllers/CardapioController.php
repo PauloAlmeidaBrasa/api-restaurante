@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cardapio;
+use App\Models\Prato;
+
+
+use Illuminate\Support\Facades\DB;
 
 class CardapioController extends Controller
 {
@@ -26,13 +30,21 @@ class CardapioController extends Controller
     public function getCardapio(Request $request) {
 
         $id = $request->input('id');
-        //dd($request->input());
 
         if (!isset($id)) { 
             return response()->json(['message' => 'Parameter id cardapio is missing'], 500); 
         }
+        $menu = Cardapio::findOrFail($id)->getAttributes();
+        $pratos = Prato::where('cardapio_id', '=', $id)->get()->toArray();
 
-        $menu = Cardapio::findOrFail($id);
+        for ($i=0; $i < count($pratos); $i++) { 
+            $menu["pratos"][] = [
+                "id" => $pratos[$i]["id"],
+                "nome" => $pratos[$i]["nome"],
+                "descricao" => $pratos[$i]["descricao"]
+            ];
+        }
+
         return response()->json($menu);
     }
 }

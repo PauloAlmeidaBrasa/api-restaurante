@@ -16,4 +16,8 @@ class Prato extends Model
     protected $fillable = [
         'nome', 'descricao', 'preco','cardapio_id'
     ];
+    public function cardapio()
+    {
+        return $this->belongsTo(Cardapio::class);
+    }
 }
