@@ -13,28 +13,50 @@ class Prato extends TestCase
      *
      * @return void
      */
-    public function test_example()
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-    public function testMissingParameters()
+    public function testMissingLimitParameter()
     {
        // $this->withoutExceptionHandling();
+       $params = [
+        'offset' => 1
+        // 'limit' => 
+       ];
 
-        $response = $this->json('GET', '/api/cardapios');
+        $response = $this->json('GET', '/api/pratos',$params);
 
-        $response->assertStatus(500);
+        $response->assertStatus(500)
+             ->assertJson([
+                 'message' => 'Parameter limit is missing'
+             ]);
 
 
     }
-    public function testMissingParameterPrato()
+    public function testMissingOffsetParameter()
     {
 
-        $response = $this->Json('GET','/api/cardapio');
+       $params = [
+        'limit' => 50
+        // 'offser' => 
+       ];
 
-        $response->assertStatus(500);
+        $response = $this->json('GET', '/api/pratos',$params);
 
-    }  
+        $response->assertStatus(500)
+             ->assertJson([
+                 'message' => 'Parameter offset is missing'
+             ]);
+
+    }
+    public function testSuccessPratos()
+    {
+        //$this->withoutExceptionHandling();
+        $params = [
+            'limit' => 50,
+            'offset' =>  0
+        ];
+    
+        $response = $this->json('GET', '/api/pratos',$params);
+
+        $response->assertStatus(200);
+
+    }    
 }

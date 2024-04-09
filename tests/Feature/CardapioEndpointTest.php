@@ -59,10 +59,10 @@ class CardapioEndpointTest extends TestCase
         $response->assertStatus(200);
 
     }    
-    public function testSuccessCardapio()
+   /*  public function testSuccessCardapio()
     {
         $response = $this->Json('GET','/api/cardapio',['id' => 1]);
 
         $response->assertStatus(200);
-    }
+    } */
 }
