@@ -47,4 +47,21 @@ class CardapioController extends Controller
 
         return response()->json($menu);
     }
+    public function updateCardapio(Request $request) {
+
+        $cardapioId = $request->input('id');
+        $cardapioNome = $request->input('nome');
+        $cardapioDescricao = $request->input('descricao');
+
+
+        try {
+
+            $cardapio = Cardapio::find($cardapioId);
+            $cardapio->nome = $cardapioNome;
+            $cardapio->descricao = $cardapioDescricao;
+            $cardapio->save();
+        } catch (\Throwable $th) {
+             return response()->json($th);
+        }
+    }
 }
