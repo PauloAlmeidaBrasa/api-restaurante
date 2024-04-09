@@ -29,6 +29,8 @@ Route::get('/users', function () {
 Route::get('/cardapios',[CardapioController::class, 'getCardapios']);
 Route::get('/cardapio',[CardapioController::class, 'getCardapio']);
 Route::get('/pratos',[PratoController::class, 'getPratos']);
+Route::get('/pratos',[PratoController::class, 'getPratos']);
+Route::post('/cardapio/update',[CardapioController::class, 'updateCardapio']);
 // Route::get('/cardapios', function () {
 
 

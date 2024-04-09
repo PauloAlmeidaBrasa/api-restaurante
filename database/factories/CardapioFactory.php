@@ -17,8 +17,9 @@ class CardapioFactory extends Factory
      */
     public function definition()
     {
+        static $number = 1;
         return [
-            'nome' => fake()->name(),
+            'nome' => 'Cardapio'.$number++,
             'descricao' => fake()->text()
         ];
     }

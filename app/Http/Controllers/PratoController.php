@@ -21,11 +21,4 @@ class PratoController extends Controller
         $pratos = Prato::All();
         return response()->json($pratos);
     }
-    
-    public function getByCardapioId($cardapioId)
-    {
-        $pratos = Prato::where('cardapio_id', $cardapioId)->get();
-
-        return response()->json($pratos);
-    }
 }
